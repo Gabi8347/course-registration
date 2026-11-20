@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="tr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RegistrationResult.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"></span><a href="../index.html" class="el_report">course-registration</a> &gt; <a href="index.source.html" class="el_package">edu.svv.registration</a> &gt; <span class="el_source">RegistrationResult.java</span></div><h1>RegistrationResult.java</h1><pre class="source lang-java linenums">package edu.svv.registration;
+
+/** Outcome of a registration attempt: REGISTERED, or REJECTED with one reason. */
+public final class RegistrationResult {
+
+<span class="fc" id="L6">    public enum Status { REGISTERED, REJECTED }</span>
+
+    private final Status status;
+    private final RejectionReason reason;
+
+<span class="fc" id="L11">    private RegistrationResult(Status status, RejectionReason reason) {</span>
+<span class="fc" id="L12">        this.status = status;</span>
+<span class="fc" id="L13">        this.reason = reason;</span>
+<span class="fc" id="L14">    }</span>
+
+    public static RegistrationResult registered() {
+<span class="fc" id="L17">        return new RegistrationResult(Status.REGISTERED, null);</span>
+    }
+
+    public static RegistrationResult rejected(RejectionReason reason) {
+<span class="fc" id="L21">        return new RegistrationResult(Status.REJECTED, reason);</span>
+    }
+
+<span class="fc" id="L24">    public Status getStatus() { return status; }</span>
+
+    /** Null when the registration was accepted. */
+<span class="fc" id="L27">    public RejectionReason getReason() { return reason; }</span>
+
+<span class="fc bfc" id="L29" title="All 2 branches covered.">    public boolean isRegistered() { return status == Status.REGISTERED; }</span>
+
+    @Override
+    public String toString() {
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        return isRegistered() ? &quot;REGISTERED&quot; : &quot;REJECTED (&quot; + reason + &quot;)&quot;;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

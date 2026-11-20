@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="tr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CreditPolicy.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"></span><a href="../index.html" class="el_report">course-registration</a> &gt; <a href="index.source.html" class="el_package">edu.svv.registration</a> &gt; <span class="el_source">CreditPolicy.java</span></div><h1>CreditPolicy.java</h1><pre class="source lang-java linenums">package edu.svv.registration;
+
+/** FR-2: maximum ECTS per semester depending on GPA (v1.1 adds the honour band). */
+public final class CreditPolicy {
+
+    static final int LOW_LIMIT = 30;
+    static final int STANDARD_LIMIT = 37;
+    static final int HIGH_LIMIT = 45;
+    static final int HONOUR_LIMIT = 50;
+
+    private CreditPolicy() {
+    }
+
+    public static int maxEcts(double gpa) {
+<span class="fc bfc" id="L15" title="All 2 branches covered.">        if (!Student.isValidGpa(gpa)) {</span>
+<span class="fc" id="L16">            throw new IllegalArgumentException(&quot;GPA must be between 0.00 and 4.00: &quot; + gpa);</span>
+        }
+<span class="fc bfc" id="L18" title="All 2 branches covered.">        if (gpa &lt; 2.0) {</span>
+<span class="fc" id="L19">            return LOW_LIMIT;</span>
+<span class="fc bfc" id="L20" title="All 2 branches covered.">        } else if (gpa &lt; 3.0) {</span>
+<span class="fc" id="L21">            return STANDARD_LIMIT;</span>
+<span class="fc bfc" id="L22" title="All 2 branches covered.">        } else if (gpa &lt; 3.5) {</span>
+<span class="fc" id="L23">            return HIGH_LIMIT;</span>
+        } else {
+<span class="fc" id="L25">            return HONOUR_LIMIT;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
