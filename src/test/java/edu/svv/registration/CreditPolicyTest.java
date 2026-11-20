@@ -17,7 +17,8 @@ class CreditPolicyTest {
     @CsvSource({
             "1.00, 30",  // class [0.00, 2.00)
             "2.50, 37",  // class [2.00, 3.00)
-            "3.50, 45"   // class [3.00, 4.00]
+            "3.25, 45",  // class [3.00, 3.50)
+            "3.75, 50"   // class [3.50, 4.00]  (v1.1 honour band)
     })
     @DisplayName("EP: one representative per valid GPA class")
     void equivalenceClasses(double gpa, int expected) {
@@ -29,7 +30,8 @@ class CreditPolicyTest {
             "0.00, 30", "0.01, 30",
             "1.99, 30", "2.00, 37", "2.01, 37",
             "2.99, 37", "3.00, 45", "3.01, 45",
-            "3.99, 45", "4.00, 45"
+            "3.49, 45", "3.50, 50", "3.51, 50",  // v1.1 honour boundary
+            "3.99, 50", "4.00, 50"
     })
     @DisplayName("BVA: below, on and above every GPA boundary")
     void boundaryValues(double gpa, int expected) {
@@ -45,11 +47,12 @@ class CreditPolicyTest {
     }
 
     @Test
-    @DisplayName("Limits are ordered: low < standard < high")
+    @DisplayName("Limits are ordered: low < standard < high < honour")
     void limitsAreMonotonic() {
         int low = CreditPolicy.maxEcts(0.0);
         int standard = CreditPolicy.maxEcts(2.0);
         int high = CreditPolicy.maxEcts(3.0);
-        assertTrue(low < standard && standard < high);
+        int honour = CreditPolicy.maxEcts(3.5);
+        assertTrue(low < standard && standard < high && high < honour);
     }
 }

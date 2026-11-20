@@ -174,9 +174,14 @@ class RegistrationServiceTest {
                 "2.50, 30,  6, 36, true",   // limit 37
                 "2.50, 30,  7, 37, true",
                 "2.50, 30,  8, 38, false",
-                "3.50, 30, 14, 44, true",   // limit 45
-                "3.50, 30, 15, 45, true",
-                "3.50, 31, 15, 46, false",
+                "3.25, 30, 14, 44, true",   // limit 45
+                "3.25, 30, 15, 45, true",
+                "3.25, 31, 15, 46, false",
+                "3.75, 35, 14, 49, true",   // limit 50 (v1.1 honour band)
+                "3.75, 35, 15, 50, true",
+                "3.75, 36, 15, 51, false",
+                "3.49, 35, 15, 50, false",  // v1.1 GPA boundary changes the decision
+                "3.50, 35, 15, 50, true",
                 "1.99, 30,  7, 37, false",  // GPA boundary changes the decision
                 "2.00, 30,  7, 37, true",
                 "2.99, 30, 15, 45, false",
