@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="tr"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Student.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"></span><a href="../index.html" class="el_report">course-registration</a> &gt; <a href="index.source.html" class="el_package">edu.svv.registration</a> &gt; <span class="el_source">Student.java</span></div><h1>Student.java</h1><pre class="source lang-java linenums">package edu.svv.registration;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+/** A student who wants to register for courses (FR-1 validation). */
+public class Student {
+
+    static final double MIN_GPA = 0.0;
+    static final double MAX_GPA = 4.0;
+
+    private final String id;
+    private final double gpa;
+    private final boolean feesPaid;
+    private final boolean advisorApproved;
+    private final Set&lt;String&gt; completedCourses;
+<span class="fc" id="L20">    private final List&lt;Course&gt; registeredCourses = new ArrayList&lt;&gt;();</span>
+
+    public Student(String id, double gpa, boolean feesPaid, boolean advisorApproved,
+<span class="fc" id="L23">                   Set&lt;String&gt; completedCourses) {</span>
+<span class="fc bfc" id="L24" title="All 4 branches covered.">        if (id == null || id.isBlank()) {</span>
+<span class="fc" id="L25">            throw new IllegalArgumentException(&quot;Student id must not be blank&quot;);</span>
+        }
+<span class="fc bfc" id="L27" title="All 2 branches covered.">        if (!isValidGpa(gpa)) {</span>
+<span class="fc" id="L28">            throw new IllegalArgumentException(&quot;GPA must be between 0.00 and 4.00: &quot; + gpa);</span>
+        }
+<span class="fc bfc" id="L30" title="All 2 branches covered.">        if (completedCourses == null) {</span>
+<span class="fc" id="L31">            throw new IllegalArgumentException(&quot;Completed courses must not be null&quot;);</span>
+        }
+        // DEF-01: Set.contains(null) throws NullPointerException for immutable sets (Set.of),
+        // so each element is checked instead.
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        for (String code : completedCourses) {</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">            if (code == null) {</span>
+<span class="fc" id="L37">                throw new IllegalArgumentException(&quot;Completed courses must not contain null&quot;);</span>
+            }
+<span class="fc" id="L39">        }</span>
+<span class="fc" id="L40">        this.id = id;</span>
+<span class="fc" id="L41">        this.gpa = gpa;</span>
+<span class="fc" id="L42">        this.feesPaid = feesPaid;</span>
+<span class="fc" id="L43">        this.advisorApproved = advisorApproved;</span>
+<span class="fc" id="L44">        this.completedCourses = Collections.unmodifiableSet(new HashSet&lt;&gt;(completedCourses));</span>
+<span class="fc" id="L45">    }</span>
+
+    /** Also rejects NaN, because every comparison with NaN is false. */
+    static boolean isValidGpa(double gpa) {
+<span class="fc bfc" id="L49" title="All 4 branches covered.">        return gpa &gt;= MIN_GPA &amp;&amp; gpa &lt;= MAX_GPA;</span>
+    }
+
+    public int getRegisteredEcts() {
+<span class="fc" id="L53">        int total = 0;</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        for (Course c : registeredCourses) {</span>
+<span class="fc" id="L55">            total += c.getEcts();</span>
+<span class="fc" id="L56">        }</span>
+<span class="fc" id="L57">        return total;</span>
+    }
+
+    public boolean isRegisteredFor(Course course) {
+<span class="fc" id="L61">        return registeredCourses.contains(course);</span>
+    }
+
+    void addCourse(Course course) {
+<span class="fc" id="L65">        registeredCourses.add(course);</span>
+<span class="fc" id="L66">    }</span>
+
+    void removeCourse(Course course) {
+<span class="fc" id="L69">        registeredCourses.remove(course);</span>
+<span class="fc" id="L70">    }</span>
+
+<span class="fc" id="L72">    public String getId() { return id; }</span>
+<span class="fc" id="L73">    public double getGpa() { return gpa; }</span>
+<span class="fc" id="L74">    public boolean isFeesPaid() { return feesPaid; }</span>
+<span class="fc" id="L75">    public boolean isAdvisorApproved() { return advisorApproved; }</span>
+<span class="fc" id="L76">    public Set&lt;String&gt; getCompletedCourses() { return completedCourses; }</span>
+<span class="fc" id="L77">    public List&lt;Course&gt; getRegisteredCourses() { return Collections.unmodifiableList(registeredCourses); }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

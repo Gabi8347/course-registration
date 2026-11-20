@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=windows-1254">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>CreditPolicy.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package edu.svv.registration;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/** FR-2: maximum ECTS per semester depending on GPA (v1.1 adds the honour band). */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>public final class CreditPolicy {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    static final int LOW_LIMIT = 30;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    static final int STANDARD_LIMIT = 37;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    static final int HIGH_LIMIT = 45;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    static final int HONOUR_LIMIT = 50;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>    private CreditPolicy() {</span></pre></td></tr>
+
+
+<tr>
+<td class='uncovered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='uncovered'><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public static int maxEcts(double gpa) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_15'/>
+15
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_15'>2</a>
+<span>
+
+1. maxEcts : removed conditional - replaced equality check with true &rarr; KILLED<br/>
+
+2. maxEcts : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (!Student.isValidGpa(gpa)) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            throw new IllegalArgumentException(&#34;GPA must be between 0.00 and 4.00: &#34; + gpa);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_18'/>
+18
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_18'>3</a>
+<span>
+
+1. maxEcts : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+
+2. maxEcts : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+
+3. maxEcts : changed conditional boundary &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (gpa &#60; 2.0) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_19'/>
+19
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_19'>1</a>
+<span>
+
+1. maxEcts : replaced int return with 0 for edu/svv/registration/CreditPolicy::maxEcts &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return LOW_LIMIT;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_20'/>
+20
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_20'>3</a>
+<span>
+
+1. maxEcts : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+
+2. maxEcts : changed conditional boundary &rarr; KILLED<br/>
+
+3. maxEcts : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (gpa &#60; 3.0) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_21'/>
+21
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_21'>1</a>
+<span>
+
+1. maxEcts : replaced int return with 0 for edu/svv/registration/CreditPolicy::maxEcts &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return STANDARD_LIMIT;</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_22'/>
+22
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_22'>3</a>
+<span>
+
+1. maxEcts : changed conditional boundary &rarr; KILLED<br/>
+
+2. maxEcts : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+
+3. maxEcts : removed conditional - replaced comparison check with true &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        } else if (gpa &#60; 3.5) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_23'/>
+23
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_23'>1</a>
+<span>
+
+1. maxEcts : replaced int return with 0 for edu/svv/registration/CreditPolicy::maxEcts &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return HIGH_LIMIT;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        } else {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_25'/>
+25
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_25'>1</a>
+<span>
+
+1. maxEcts : replaced int return with 0 for edu/svv/registration/CreditPolicy::maxEcts &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return HONOUR_LIMIT;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@3de56885_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3de56885_15'>15</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_15'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>maxEcts<br/><b>Killed by : </b>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:equivalenceClasses(double, int)]/[test-template-invocation:#2]</span></span> removed conditional - replaced equality check with true &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>maxEcts<br/><b>Killed by : </b>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:invalidGpaThrows(double)]/[test-template-invocation:#4]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3de56885_18'>18</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_18'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>maxEcts<br/><b>Killed by : </b>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:equivalenceClasses(double, int)]/[test-template-invocation:#2]</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>maxEcts<br/><b>Killed by : </b>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:equivalenceClasses(double, int)]/[test-template-invocation:#1]</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>maxEcts<br/><b>Killed by : </b>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:boundaryValues(double, int)]/[test-template-invocation:#4]</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3de56885_19'>19</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_19'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>maxEcts<br/><b>Killed by : </b>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:boundaryValues(double, int)]/[test-template-invocation:#3]</span></span> replaced int return with 0 for edu/svv/registration/CreditPolicy::maxEcts &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3de56885_20'>20</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_20'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>maxEcts<br/><b>Killed by : </b>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:equivalenceClasses(double, int)]/[test-template-invocation:#3]</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>maxEcts<br/><b>Killed by : </b>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:boundaryValues(double, int)]/[test-template-invocation:#7]</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>maxEcts<br/><b>Killed by : </b>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:equivalenceClasses(double, int)]/[test-template-invocation:#2]</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3de56885_21'>21</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_21'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>maxEcts<br/><b>Killed by : </b>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:equivalenceClasses(double, int)]/[test-template-invocation:#2]</span></span> replaced int return with 0 for edu/svv/registration/CreditPolicy::maxEcts &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3de56885_22'>22</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_22'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>maxEcts<br/><b>Killed by : </b>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:boundaryValues(double, int)]/[test-template-invocation:#10]</span></span> changed conditional boundary &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>maxEcts<br/><b>Killed by : </b>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:boundaryValues(double, int)]/[test-template-invocation:#7]</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</span>
+</div> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>maxEcts<br/><b>Killed by : </b>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:boundaryValues(double, int)]/[test-template-invocation:#10]</span></span> removed conditional - replaced comparison check with true &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3de56885_23'>23</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_23'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>maxEcts<br/><b>Killed by : </b>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:equivalenceClasses(double, int)]/[test-template-invocation:#3]</span></span> replaced int return with 0 for edu/svv/registration/CreditPolicy::maxEcts &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@3de56885_25'>25</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@3de56885_25'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>maxEcts<br/><b>Killed by : </b>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:boundaryValues(double, int)]/[test-template-invocation:#10]</span></span> replaced int return with 0 for edu/svv/registration/CreditPolicy::maxEcts &rarr; KILLED</span>
+</div> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+
+<li class='mutator'>EMPTY_RETURNS</li>
+
+<li class='mutator'>EXPERIMENTAL_SWITCH</li>
+
+<li class='mutator'>FALSE_RETURNS</li>
+
+<li class='mutator'>INCREMENTS</li>
+
+<li class='mutator'>INVERT_NEGS</li>
+
+<li class='mutator'>MATH</li>
+
+<li class='mutator'>NULL_RETURNS</li>
+
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_ELSE</li>
+
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_IF</li>
+
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_ELSE</li>
+
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_IF</li>
+
+<li class='mutator'>TRUE_RETURNS</li>
+
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:boundaryValues(double, int)]/[test-template-invocation:#7] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:boundaryValues(double, int)]/[test-template-invocation:#8] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:boundaryValues(double, int)]/[test-template-invocation:#9] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:boundaryValues(double, int)]/[test-template-invocation:#10] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:boundaryValues(double, int)]/[test-template-invocation:#11] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:boundaryValues(double, int)]/[test-template-invocation:#12] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:boundaryValues(double, int)]/[test-template-invocation:#13] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:equivalenceClasses(double, int)]/[test-template-invocation:#3] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:equivalenceClasses(double, int)]/[test-template-invocation:#4] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[method:limitsAreMonotonic()] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:EctsLimit]/[test-template:ectsBoundaries(double, int, int, int, boolean)]/[test-template-invocation:#11] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:EctsLimit]/[test-template:ectsBoundaries(double, int, int, int, boolean)]/[test-template-invocation:#10] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:EctsLimit]/[test-template:ectsBoundaries(double, int, int, int, boolean)]/[test-template-invocation:#14] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:EctsLimit]/[test-template:ectsBoundaries(double, int, int, int, boolean)]/[test-template-invocation:#18] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:EctsLimit]/[test-template:ectsBoundaries(double, int, int, int, boolean)]/[test-template-invocation:#8] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:EctsLimit]/[test-template:ectsBoundaries(double, int, int, int, boolean)]/[test-template-invocation:#7] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:DecisionTable]/[method:allPrerequisitesRequired()] (1 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:EctsLimit]/[test-template:ectsBoundaries(double, int, int, int, boolean)]/[test-template-invocation:#13] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:EctsLimit]/[test-template:ectsBoundaries(double, int, int, int, boolean)]/[test-template-invocation:#12] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:Priority]/[method:ectsBeforeFull()] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:EctsLimit]/[test-template:ectsBoundaries(double, int, int, int, boolean)]/[test-template-invocation:#9] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:equivalenceClasses(double, int)]/[test-template-invocation:#2] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:boundaryValues(double, int)]/[test-template-invocation:#5] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:equivalenceClasses(double, int)]/[test-template-invocation:#1] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:invalidGpaThrows(double)]/[test-template-invocation:#4] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:invalidGpaThrows(double)]/[test-template-invocation:#2] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:invalidGpaThrows(double)]/[test-template-invocation:#6] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:boundaryValues(double, int)]/[test-template-invocation:#3] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:boundaryValues(double, int)]/[test-template-invocation:#1] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:boundaryValues(double, int)]/[test-template-invocation:#4] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:boundaryValues(double, int)]/[test-template-invocation:#6] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:invalidGpaThrows(double)]/[test-template-invocation:#3] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:invalidGpaThrows(double)]/[test-template-invocation:#7] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:invalidGpaThrows(double)]/[test-template-invocation:#5] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:boundaryValues(double, int)]/[test-template-invocation:#2] (0 ms)</li><li>edu.svv.registration.CreditPolicyTest.[engine:junit-jupiter]/[class:edu.svv.registration.CreditPolicyTest]/[test-template:invalidGpaThrows(double)]/[test-template-invocation:#1] (6 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:Negative]/[method:dropTwice()] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:Capacity]/[method:minimumCapacity()] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:TimeConflict]/[method:adjacentCourseAccepted()] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:EctsLimit]/[test-template:ectsBoundaries(double, int, int, int, boolean)]/[test-template-invocation:#5] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:EctsLimit]/[test-template:ectsBoundaries(double, int, int, int, boolean)]/[test-template-invocation:#1] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:Capacity]/[method:capacityBoundary()] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:TimeConflict]/[method:conflictWithLaterCourse()] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:EctsLimit]/[test-template:ectsBoundaries(double, int, int, int, boolean)]/[test-template-invocation:#16] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:EctsLimit]/[test-template:ectsBoundaries(double, int, int, int, boolean)]/[test-template-invocation:#4] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:EctsLimit]/[test-template:ectsBoundaries(double, int, int, int, boolean)]/[test-template-invocation:#2] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:Negative]/[method:duplicateRegistration()] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:EctsLimit]/[test-template:ectsBoundaries(double, int, int, int, boolean)]/[test-template-invocation:#3] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:DecisionTable]/[test-template:decisionTable(java.lang.String, boolean, boolean, boolean, boolean, java.lang.String)]/[test-template-invocation:#4] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:DecisionTable]/[test-template:decisionTable(java.lang.String, boolean, boolean, boolean, boolean, java.lang.String)]/[test-template-invocation:#6] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:DecisionTable]/[test-template:decisionTable(java.lang.String, boolean, boolean, boolean, boolean, java.lang.String)]/[test-template-invocation:#12] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:DecisionTable]/[test-template:decisionTable(java.lang.String, boolean, boolean, boolean, boolean, java.lang.String)]/[test-template-invocation:#14] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:DecisionTable]/[test-template:decisionTable(java.lang.String, boolean, boolean, boolean, boolean, java.lang.String)]/[test-template-invocation:#16] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:TimeConflict]/[method:overlappingCourseRejected()] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:DecisionTable]/[test-template:decisionTable(java.lang.String, boolean, boolean, boolean, boolean, java.lang.String)]/[test-template-invocation:#10] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:DecisionTable]/[test-template:decisionTable(java.lang.String, boolean, boolean, boolean, boolean, java.lang.String)]/[test-template-invocation:#8] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:Priority]/[method:conflictBeforeEcts()] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:EctsLimit]/[test-template:ectsBoundaries(double, int, int, int, boolean)]/[test-template-invocation:#15] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:DecisionTable]/[test-template:decisionTable(java.lang.String, boolean, boolean, boolean, boolean, java.lang.String)]/[test-template-invocation:#2] (1 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:EctsLimit]/[test-template:ectsBoundaries(double, int, int, int, boolean)]/[test-template-invocation:#6] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:EctsLimit]/[test-template:ectsBoundaries(double, int, int, int, boolean)]/[test-template-invocation:#17] (0 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:DecisionTable]/[test-template:decisionTable(java.lang.String, boolean, boolean, boolean, boolean, java.lang.String)]/[test-template-invocation:#1] (3 ms)</li><li>edu.svv.registration.RegistrationServiceTest.[engine:junit-jupiter]/[class:edu.svv.registration.RegistrationServiceTest]/[nested-class:Drop]/[method:dropFreesEctsAndSeat()] (3 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.17.4
+
+</body>
+</html>
