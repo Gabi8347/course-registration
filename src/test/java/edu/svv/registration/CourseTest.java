@@ -43,7 +43,8 @@ class CourseTest {
                     () -> assertEquals(9, c.getStartHour()),
                     () -> assertEquals(3, c.getDurationHours()),
                     () -> assertEquals(12, c.getEndHour()),
-                    () -> assertTrue(c.hasFreeSeat()));
+                    () -> assertTrue(c.hasFreeSeat()),
+                    () -> assertEquals("SWE301 (6 ECTS, MONDAY 9:00-12:00)", c.toString()));
         }
 
         @ParameterizedTest(name = "valid code {0}")
@@ -67,35 +68,35 @@ class CourseTest {
         @CsvSource({"0, false", "1, true", "2, true", "14, true", "15, true", "16, false", "-5, false"})
         @DisplayName("BVA: ECTS range [1, 15]")
         void ectsBoundaries(int ects, boolean valid) {
-            assertValidity(valid, () -> course("SWE301", ects, 10, DayOfWeek.MONDAY, 9, 2));
+            assertValidity(valid, "ECTS", () -> course("SWE301", ects, 10, DayOfWeek.MONDAY, 9, 2));
         }
 
         @ParameterizedTest(name = "capacity {0} valid={1}")
         @CsvSource({"0, false", "1, true", "2, true", "499, true", "500, true", "501, false"})
         @DisplayName("BVA: capacity range [1, 500]")
         void capacityBoundaries(int capacity, boolean valid) {
-            assertValidity(valid, () -> course("SWE301", 5, capacity, DayOfWeek.MONDAY, 9, 1));
+            assertValidity(valid, "Capacity", () -> course("SWE301", 5, capacity, DayOfWeek.MONDAY, 9, 1));
         }
 
         @ParameterizedTest(name = "start {0} valid={1}")
         @CsvSource({"7, false", "8, true", "9, true", "18, true", "19, true", "20, false"})
         @DisplayName("BVA: start hour range [8, 19] (1-hour course)")
         void startHourBoundaries(int start, boolean valid) {
-            assertValidity(valid, () -> course("SWE301", 5, 10, DayOfWeek.MONDAY, start, 1));
+            assertValidity(valid, "Start hour", () -> course("SWE301", 5, 10, DayOfWeek.MONDAY, start, 1));
         }
 
         @ParameterizedTest(name = "duration {0} valid={1}")
         @CsvSource({"0, false", "1, true", "4, true", "5, false"})
         @DisplayName("BVA: duration range [1, 4]")
         void durationBoundaries(int duration, boolean valid) {
-            assertValidity(valid, () -> course("SWE301", 5, 10, DayOfWeek.MONDAY, 9, duration));
+            assertValidity(valid, "Duration", () -> course("SWE301", 5, 10, DayOfWeek.MONDAY, 9, duration));
         }
 
         @ParameterizedTest(name = "start {0} + {1}h valid={2}")
-        @CsvSource({"16, 4, true", "17, 3, true", "17, 4, false", "19, 1, true", "19, 2, false"})
+        @CsvSource({"15, 4, true", "16, 4, true", "17, 3, true", "17, 4, false", "19, 1, true", "19, 2, false"})
         @DisplayName("BVA: course must end by 20:00 (end = 19, 20, 21)")
         void endOfDayBoundary(int start, int duration, boolean valid) {
-            assertValidity(valid, () -> course("SWE301", 5, 10, DayOfWeek.MONDAY, start, duration));
+            assertValidity(valid, "end by 20:00", () -> course("SWE301", 5, 10, DayOfWeek.MONDAY, start, duration));
         }
 
         @ParameterizedTest(name = "weekday {0}")
@@ -137,11 +138,17 @@ class CourseTest {
                             () -> new Course("SWE301", 5, 10, withNull, DayOfWeek.MONDAY, 9, 2)));
         }
 
-        private void assertValidity(boolean valid, org.junit.jupiter.api.function.Executable creation) {
+        /**
+         * For invalid input the message must name the violated rule, so a test cannot pass
+         * because a different validation rule happened to reject the input (found by PIT, see docs).
+         */
+        private void assertValidity(boolean valid, String rule, org.junit.jupiter.api.function.Executable creation) {
             if (valid) {
                 assertDoesNotThrow(creation);
             } else {
-                assertThrows(IllegalArgumentException.class, creation);
+                IllegalArgumentException e = assertThrows(IllegalArgumentException.class, creation);
+                assertTrue(e.getMessage().contains(rule),
+                        "expected rule '" + rule + "' but message was: " + e.getMessage());
             }
         }
     }
