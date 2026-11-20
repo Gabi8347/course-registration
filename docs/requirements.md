@@ -1,4 +1,4 @@
-# Course Registration Eligibility Checker — Requirements & Test Design (v1.0)
+# Course Registration Eligibility Checker — Requirements & Test Design (v1.1)
 
 ## 1. Problem
 At the start of each semester students register for courses through a set of rules
@@ -36,7 +36,7 @@ Convention: **invalid data → exception**, **valid data that breaks a business 
 | ID | Requirement |
 |---|---|
 | FR-1 | The system shall validate Student and Course data as in Section 2 and throw `IllegalArgumentException` with a descriptive message for invalid data. |
-| FR-2 | The maximum ECTS per semester shall depend on GPA: **gpa < 2.00 → 30**, **2.00 ≤ gpa < 3.00 → 37**, **gpa ≥ 3.00 → 45**. |
+| FR-2 | The maximum ECTS per semester shall depend on GPA: **gpa < 2.00 → 30**, **2.00 ≤ gpa < 3.00 → 37**, **3.00 ≤ gpa < 3.50 → 45**, **gpa ≥ 3.50 → 50** (honour students, *changed in v1.1*; v1.0 had gpa ≥ 3.00 → 45). |
 | FR-3 | A registration shall be rejected with `ECTS_LIMIT_EXCEEDED` if (ECTS already registered + course ECTS) > limit. Reaching the limit exactly is allowed. |
 | FR-4 | Rejected with `FEES_UNPAID` if the student has not paid fees. |
 | FR-5 | Rejected with `PREREQUISITE_MISSING` if any prerequisite is not in the student's completed courses. |
@@ -84,10 +84,10 @@ conditions fail together — the place where an implementation is most likely to
 
 | Technique | Applied to | Selected values / cases |
 |---|---|---|
-| Equivalence Partitioning | GPA (FR-1, FR-2) | invalid low (<0), [0,2), [2,3), [3,4], invalid high (>4), NaN |
+| Equivalence Partitioning | GPA (FR-1, FR-2) | invalid low (<0), [0,2), [2,3), [3,3.5), [3.5,4] (v1.1), invalid high (>4), NaN |
 | | Course code (FR-1) | valid `SWE301`; invalid: lowercase, 1 letter, 5 letters, 2 digits, 4 digits, blank, null |
 | | Day (FR-1) | weekday / weekend / null |
-| Boundary Value Analysis | GPA limits (FR-2) | -0.01, 0.00, 0.01, 1.99, 2.00, 2.01, 2.99, 3.00, 3.01, 3.99, 4.00, 4.01 |
+| Boundary Value Analysis | GPA limits (FR-2) | -0.01, 0.00, 0.01, 1.99, 2.00, 2.01, 2.99, 3.00, 3.01, 3.49, 3.50, 3.51 (v1.1), 3.99, 4.00, 4.01 |
 | | ECTS limit (FR-3) | total = limit-1, limit, limit+1 (for each GPA band) |
 | | ECTS, capacity, startHour, duration (FR-1) | min-1, min, max, max+1 |
 | | Capacity (FR-7) | enrolled = capacity-1 (accept), = capacity (reject) |
@@ -96,7 +96,7 @@ conditions fail together — the place where an implementation is most likely to
 | Negative Testing | FR-1, FR-9, FR-12 | null objects, invalid fields, duplicate registration, completed course, drop unregistered course, drop twice |
 | Regression Testing | whole suite | full suite re-run after every defect fix and after the planned change (see below); results logged per run |
 
-**Planned change for regression (proposal, pending approval):** after v1 is green, a
+**Change used for regression (implemented in v1.1, see `regression-log.md`):** after v1 is green, a
 requirement change *v1.1* is introduced — honour students (**gpa ≥ 3.50**) get a 50 ECTS
 limit. The whole v1 suite is re-run unchanged to show existing behaviour is preserved,
 then new BVA cases (3.49 / 3.50 / 3.51) are added.
