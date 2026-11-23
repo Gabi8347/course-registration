@@ -332,6 +332,20 @@ class RegistrationServiceTest {
             assertThrows(IllegalStateException.class, () -> service.drop(s, c));
             assertEquals(0, c.getEnrolled());
         }
+
+        @Test
+        @DisplayName("DEF-02: another section with the same course code is ALREADY_REGISTERED (FR-9)")
+        void sameCodeOtherSection() {
+            Student s = eligibleStudent(2.5);
+            Course monday = course("SWE201", 5, 10, DayOfWeek.MONDAY, 10);
+            Course tuesday = course("SWE201", 5, 10, DayOfWeek.TUESDAY, 10);
+            assertTrue(service.register(s, monday).isRegistered());
+            assertRejected(service.register(s, tuesday), RejectionReason.ALREADY_REGISTERED);
+            assertAll(
+                    () -> assertEquals(0, tuesday.getEnrolled()),
+                    () -> assertEquals(5, s.getRegisteredEcts()),
+                    () -> assertEquals(1, s.getRegisteredCourses().size()));
+        }
     }
 
     // ---------- Drop (FR-12) ----------
@@ -339,6 +353,23 @@ class RegistrationServiceTest {
     @Nested
     @DisplayName("FR-12 drop")
     class Drop {
+
+        @Test
+        @DisplayName("DEF-02: drop is by course code; the registered section's count is decreased")
+        void dropBySameCodeOtherObject() {
+            Student s = eligibleStudent(2.5);
+            Course registered = course("SWE201", 5, 10, DayOfWeek.MONDAY, 10);
+            Course sameCode = course("SWE201", 5, 10, DayOfWeek.TUESDAY, 10);
+            service.register(s, registered);
+
+            service.drop(s, sameCode);
+
+            assertAll(
+                    () -> assertEquals(0, registered.getEnrolled()),
+                    () -> assertEquals(0, sameCode.getEnrolled(), "never negative"),
+                    () -> assertEquals(0, s.getRegisteredEcts()),
+                    () -> assertFalse(s.isRegisteredFor(registered)));
+        }
 
         @Test
         @DisplayName("Drop frees ECTS and seat, so the course can be taken again")
