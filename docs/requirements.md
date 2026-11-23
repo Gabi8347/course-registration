@@ -1,4 +1,4 @@
-# Course Registration Eligibility Checker — Requirements & Test Design (v1.1)
+# Course Registration Eligibility Checker — Requirements & Test Design (v1.2)
 
 ## 1. Problem
 At the start of each semester students register for courses through a set of rules
@@ -23,7 +23,7 @@ modelled processes.
 | Course | `code` | 2–4 uppercase letters + 3 digits, e.g. `SWE301` | `IllegalArgumentException` |
 | | `ects` | 1 ≤ ects ≤ 15 | `IllegalArgumentException` |
 | | `capacity` | 1 ≤ capacity ≤ 500 | `IllegalArgumentException` |
-| | `prerequisites` | set of course codes (may be empty) | `IllegalArgumentException` if null |
+| | `prerequisites` | set of course codes (may be empty), not the course's own code (*v1.2*) | `IllegalArgumentException` |
 | | `day` | MONDAY … FRIDAY | `IllegalArgumentException` (SAT/SUN/null) |
 | | `startHour` | 8 ≤ startHour ≤ 19 | `IllegalArgumentException` |
 | | `durationHours` | 1 ≤ duration ≤ 4 **and** startHour + duration ≤ 20 | `IllegalArgumentException` |
@@ -43,10 +43,10 @@ Convention: **invalid data → exception**, **valid data that breaks a business 
 | FR-6 | Rejected with `ADVISOR_APPROVAL_MISSING` if the advisor has not approved. |
 | FR-7 | Rejected with `COURSE_FULL` if enrolled count == capacity. |
 | FR-8 | Rejected with `TIME_CONFLICT` if the course overlaps a registered course on the same day. Overlap: `s1 < e2 && s2 < e1` (a course ending at 10:00 and one starting at 10:00 do **not** conflict). |
-| FR-9 | Rejected with `ALREADY_REGISTERED` if the student is already registered for the course, and `ALREADY_COMPLETED` if it is in completed courses. |
+| FR-9 | Rejected with `ALREADY_REGISTERED` if the student is already registered for a course with the **same code** (any section; *clarified in v1.2*, DEF-02), and `ALREADY_COMPLETED` if it is in completed courses. |
 | FR-10 | When several rules fail, the **first** in this order is reported: ALREADY_REGISTERED → ALREADY_COMPLETED → FEES_UNPAID → PREREQUISITE_MISSING → ADVISOR_APPROVAL_MISSING → TIME_CONFLICT → ECTS_LIMIT_EXCEEDED → COURSE_FULL. |
 | FR-11 | On success the result is `REGISTERED`, the course's enrolled count increases by 1 and its ECTS count toward the student's total. |
-| FR-12 | Dropping a registered course shall remove it, decrease enrolled count by 1 and free its ECTS. Dropping a course the student is not registered for shall throw `IllegalStateException` (incorrect operation). |
+| FR-12 | Dropping a course (identified by its code) shall remove the registered section, decrease **that section's** enrolled count by 1 and free its ECTS. Dropping a course the student is not registered for shall throw `IllegalStateException` (incorrect operation). |
 
 Rationale for FR-10 order: administrative blocks (duplicates, fees) first, then academic
 eligibility, then timetable/credit load, then quota — the student fixes problems in a
@@ -93,7 +93,7 @@ conditions fail together — the place where an implementation is most likely to
 | | Capacity (FR-7) | enrolled = capacity-1 (accept), = capacity (reject) |
 | | Time overlap (FR-8) | end == start (no conflict), overlap by 1 hour, identical slot, different day |
 | Decision Table | FR-4…FR-7, FR-10, FR-11 | 5 rules + don't-care priority checks (Section 4); R5 also asserts enrolled+1 and ECTS total (FR-11) |
-| Negative Testing | FR-1, FR-9, FR-12 | null objects, invalid fields, duplicate registration, completed course, drop unregistered course, drop twice |
+| Negative Testing | FR-1, FR-9, FR-12 | null objects, invalid fields, self-prerequisite, duplicate registration (same object and other section), completed course, drop unregistered course, drop twice |
 | Regression Testing | whole suite | full suite re-run after every defect fix and after the planned change (see below); results logged per run |
 
 **Change used for regression (implemented in v1.1, see `regression-log.md`):** after v1 is green, a

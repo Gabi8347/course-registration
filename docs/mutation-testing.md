@@ -18,6 +18,8 @@ Report: `target/pit-reports/index.html`
 |---|---|---|---|---|---|---|---|
 | 1 (v1 suite) | 146 | 166 | 164 | 1 | 1 | 98.8 % | 147/148 · 96/96 |
 | 2 (after TD-01, TD-02) | 147 | 166 | 166 | 0 | 0 | 100 % | 148/148 · 96/96 |
+| 3 (v1.1) | 156 | 165 | 165 | 0 | 0 | 100 % | 150/150 · 98/98 |
+| 4 (v1.2, after DEF-02/03 fix) | 159 | 171 | 171 | 0 | 0 | 100 % | 158/158 · 106/106 |
 
 JaCoCo figures are from `./mvnw clean test` (a build without `clean` after a PIT run gave
 stale totals, so `clean` is always used for reported numbers).
@@ -40,4 +42,7 @@ This line had 100 % line and branch coverage, so JaCoCo could not reveal the pro
 * Negative tests must check *which* rule rejected the input (message / reason code), not
   only *that* an exception was thrown. `RegistrationService` already did this through
   `RejectionReason`; the constructor validation tests did not.
-* Equivalent mutants were not observed in this run; all 166 were killable.
+* Equivalent mutants were not observed; every generated mutant was killable.
+* 100 % mutation score did **not** mean the program was correct: DEF-02 (duplicate check by object identity)
+  was found later by code review. Mutants are small changes to code that exists; they cannot reveal a
+  wrong design decision or a scenario no test sets up (here: two `Course` objects with the same code).
