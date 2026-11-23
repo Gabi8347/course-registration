@@ -11,31 +11,13 @@
 [INFO] -------------------------------------------------------
 [INFO] -------------------------------------------------------
 [INFO] Running edu.svv.registration.CourseTest
-[INFO] Running edu.svv.registration.CourseTest$Overlap
-[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.189 s -- in edu.svv.registration.CourseTest$Overlap
-[INFO] Running edu.svv.registration.CourseTest$Validation
-[INFO] Tests run: 57, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.130 s -- in edu.svv.registration.CourseTest$Validation
-[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.339 s -- in edu.svv.registration.CourseTest
+[INFO] Tests run: 66, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.335 s -- in edu.svv.registration.CourseTest
 [INFO] Running edu.svv.registration.CreditPolicyTest
 [INFO] Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s -- in edu.svv.registration.CreditPolicyTest
 [INFO] Running edu.svv.registration.RegistrationServiceTest
-[INFO] Running edu.svv.registration.RegistrationServiceTest$Drop
-[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s -- in edu.svv.registration.RegistrationServiceTest$Drop
-[INFO] Running edu.svv.registration.RegistrationServiceTest$Negative
-[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in edu.svv.registration.RegistrationServiceTest$Negative
-[INFO] Running edu.svv.registration.RegistrationServiceTest$TimeConflict
-[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in edu.svv.registration.RegistrationServiceTest$TimeConflict
-[INFO] Running edu.svv.registration.RegistrationServiceTest$Capacity
-[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s -- in edu.svv.registration.RegistrationServiceTest$Capacity
-[INFO] Running edu.svv.registration.RegistrationServiceTest$EctsLimit
-[INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in edu.svv.registration.RegistrationServiceTest$EctsLimit
-[INFO] Running edu.svv.registration.RegistrationServiceTest$Priority
-[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in edu.svv.registration.RegistrationServiceTest$Priority
-[INFO] Running edu.svv.registration.RegistrationServiceTest$DecisionTable
-[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 s -- in edu.svv.registration.RegistrationServiceTest$DecisionTable
-[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.106 s -- in edu.svv.registration.RegistrationServiceTest
+[INFO] Tests run: 52, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.066 s -- in edu.svv.registration.RegistrationServiceTest
 [INFO] Running edu.svv.registration.StudentTest
-[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.020 s -- in edu.svv.registration.StudentTest
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in edu.svv.registration.StudentTest
 [INFO] Results:
 [INFO] Tests run: 159, Failures: 0, Errors: 0, Skipped: 0
 [INFO] --- jacoco:0.8.12:report (report) @ course-registration ---

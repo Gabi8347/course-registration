@@ -70,3 +70,16 @@ Only the 3 new tests failed. After the fix the full suite was re-run: **159 / 15
 |---|---|---|---|---|---|---|
 | Red run | v1.1 | 159 | 156 | 3 (new tests) | — | — |
 | After fix | v1.2 | 159 | 159 | 0 | 158/158 · 106/106 | 171/171 |
+
+## Test refactoring (v1.2): simpler test code, same test cases
+The test classes were rewritten in a plainer style (no `@Nested`, no `assertAll`, no helper that takes code
+as a parameter, no `if/else` inside tests; decision-table and ECTS-limit tests split into an *accepted* and a
+*rejected* method). The production code was not touched. Every test case was kept, so the refactoring was
+checked like any other change: the full suite and PIT were re-run.
+
+| Run | Tests (per class) | Passed | JaCoCo line · branch | PIT killed |
+|---|---|---|---|---|
+| Before refactoring | 159 (Course 66, CreditPolicy 25, RegistrationService 52, Student 16) | 159 | 158/158 · 106/106 | 171/171 |
+| After refactoring | 159 (Course 66, CreditPolicy 25, RegistrationService 52, Student 16) | 159 | 158/158 · 106/106 | 171/171 |
+
+Course-code tests gained a message check as well (they previously only checked that an exception was thrown).
