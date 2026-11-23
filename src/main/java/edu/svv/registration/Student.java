@@ -57,8 +57,19 @@ public class Student {
         return total;
     }
 
+    /** DEF-02: a course is identified by its code, so another section of the same course counts too. */
     public boolean isRegisteredFor(Course course) {
-        return registeredCourses.contains(course);
+        return findRegistered(course.getCode()) != null;
+    }
+
+    /** The registered course with this code, or null if there is none. */
+    Course findRegistered(String code) {
+        for (Course c : registeredCourses) {
+            if (c.getCode().equals(code)) {
+                return c;
+            }
+        }
+        return null;
     }
 
     void addCourse(Course course) {
