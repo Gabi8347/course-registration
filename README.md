@@ -5,15 +5,15 @@ not, **why** — based on GPA-dependent ECTS limits, prerequisites, unpaid fees,
 approval, quotas and timetable clashes. Built for the *Software Verification and Validation*
 course to practise systematic unit testing with **JUnit 5**.
 
-## Results at a glance (v1.1)
+## Results at a glance (v1.2)
 
 | Metric | Value |
 |---|---|
-| JUnit 5 tests | 156 / 156 passing |
-| JaCoCo line coverage | 150 / 150 (100 %) |
-| JaCoCo branch coverage | 98 / 98 (100 %) |
-| PIT mutation score (`STRONGER`) | 165 / 165 killed (100 %) |
-| Defects found | 1 product defect, 2 test-suite defects ([defect log](docs/defect-log.md)) |
+| JUnit 5 tests | 159 / 159 passing |
+| JaCoCo line coverage | 158 / 158 (100 %) |
+| JaCoCo branch coverage | 106 / 106 (100 %) |
+| PIT mutation score (`STRONGER`) | 171 / 171 killed (100 %) |
+| Defects found | 3 product defects, 2 test-suite defects ([defect log](docs/defect-log.md)) |
 
 ## Rules (FR-1 … FR-12)
 * **ECTS limit by GPA:** < 2.00 → 30 · 2.00–2.99 → 37 · 3.00–3.49 → 45 · ≥ 3.50 → 50 (v1.1)

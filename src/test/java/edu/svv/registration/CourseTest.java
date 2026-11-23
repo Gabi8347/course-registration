@@ -138,6 +138,14 @@ class CourseTest {
                             () -> new Course("SWE301", 5, 10, withNull, DayOfWeek.MONDAY, 9, 2)));
         }
 
+        @Test
+        @DisplayName("DEF-03 Negative: a course cannot be its own prerequisite")
+        void selfPrerequisite() {
+            IllegalArgumentException e = assertThrows(IllegalArgumentException.class,
+                    () -> new Course("SWE301", 5, 10, Set.of("SWE201", "SWE301"), DayOfWeek.MONDAY, 9, 2));
+            assertTrue(e.getMessage().contains("own prerequisite"), e.getMessage());
+        }
+
         /**
          * For invalid input the message must name the violated rule, so a test cannot pass
          * because a different validation rule happened to reject the input (found by PIT, see docs).

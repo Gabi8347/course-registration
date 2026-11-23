@@ -44,12 +44,14 @@ public class RegistrationService {
     /** FR-12: dropping a course the student is not registered for is an incorrect operation. */
     public void drop(Student student, Course course) {
         requireNotNull(student, course);
-        if (!student.isRegisteredFor(course)) {
+        // DEF-02: look up the section the student actually registered for (same code).
+        Course registered = student.findRegistered(course.getCode());
+        if (registered == null) {
             throw new IllegalStateException(
                     "Student " + student.getId() + " is not registered for " + course.getCode());
         }
-        student.removeCourse(course);
-        course.decrementEnrolled();
+        student.removeCourse(registered);
+        registered.decrementEnrolled();
     }
 
     private static void requireNotNull(Student student, Course course) {

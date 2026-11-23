@@ -52,3 +52,21 @@ real regression.
 | Regression run 2 | v1.1 | 156 | 156 | 0 | 150/150 · 98/98 | 165/165 |
 
 (PIT generates 165 instead of 166 mutants because the extra `else if` changes the bytecode.)
+
+## v1.1 → v1.2 (defect fix DEF-02, DEF-03)
+Three new tests were written first and run against the unfixed v1.1 code:
+
+```
+[ERROR]   CourseTest$Validation.selfPrerequisite:144 Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
+[ERROR]   RegistrationServiceTest$Negative.sameCodeOtherSection:343 Multiple Failures (2 failures)
+[ERROR]   RegistrationServiceTest$Drop.dropBySameCodeOtherObject:365 » IllegalState Student 2021001 is not registered for SWE201
+[ERROR] Tests run: 159, Failures: 2, Errors: 1, Skipped: 0
+```
+
+Only the 3 new tests failed. After the fix the full suite was re-run: **159 / 159 passed**, so none of the
+156 earlier tests was broken by the change (branch `fix/course-identity`).
+
+| Run | Code | Tests | Passed | Failed | JaCoCo line · branch | PIT killed |
+|---|---|---|---|---|---|---|
+| Red run | v1.1 | 159 | 156 | 3 (new tests) | — | — |
+| After fix | v1.2 | 159 | 159 | 0 | 158/158 · 106/106 | 171/171 |

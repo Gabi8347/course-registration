@@ -44,21 +44,23 @@
     /** FR-12: dropping a course the student is not registered for is an incorrect operation. */
     public void drop(Student student, Course course) {
 <span class="fc" id="L46">        requireNotNull(student, course);</span>
-<span class="fc bfc" id="L47" title="All 2 branches covered.">        if (!student.isRegisteredFor(course)) {</span>
-<span class="fc" id="L48">            throw new IllegalStateException(</span>
-<span class="fc" id="L49">                    &quot;Student &quot; + student.getId() + &quot; is not registered for &quot; + course.getCode());</span>
+        // DEF-02: look up the section the student actually registered for (same code).
+<span class="fc" id="L48">        Course registered = student.findRegistered(course.getCode());</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        if (registered == null) {</span>
+<span class="fc" id="L50">            throw new IllegalStateException(</span>
+<span class="fc" id="L51">                    &quot;Student &quot; + student.getId() + &quot; is not registered for &quot; + course.getCode());</span>
         }
-<span class="fc" id="L51">        student.removeCourse(course);</span>
-<span class="fc" id="L52">        course.decrementEnrolled();</span>
-<span class="fc" id="L53">    }</span>
+<span class="fc" id="L53">        student.removeCourse(registered);</span>
+<span class="fc" id="L54">        registered.decrementEnrolled();</span>
+<span class="fc" id="L55">    }</span>
 
     private static void requireNotNull(Student student, Course course) {
-<span class="fc bfc" id="L56" title="All 2 branches covered.">        if (student == null) {</span>
-<span class="fc" id="L57">            throw new IllegalArgumentException(&quot;Student must not be null&quot;);</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        if (student == null) {</span>
+<span class="fc" id="L59">            throw new IllegalArgumentException(&quot;Student must not be null&quot;);</span>
         }
-<span class="fc bfc" id="L59" title="All 2 branches covered.">        if (course == null) {</span>
-<span class="fc" id="L60">            throw new IllegalArgumentException(&quot;Course must not be null&quot;);</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">        if (course == null) {</span>
+<span class="fc" id="L62">            throw new IllegalArgumentException(&quot;Course must not be null&quot;);</span>
         }
-<span class="fc" id="L62">    }</span>
+<span class="fc" id="L64">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

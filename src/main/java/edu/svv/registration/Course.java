@@ -48,6 +48,10 @@ public class Course {
             if (!isValidCode(p)) {
                 throw new IllegalArgumentException("Invalid prerequisite code: " + p);
             }
+            // DEF-03: such a course could never be taken by anyone.
+            if (p.equals(code)) {
+                throw new IllegalArgumentException("A course cannot be its own prerequisite: " + code);
+            }
         }
         if (day == null || day == DayOfWeek.SATURDAY || day == DayOfWeek.SUNDAY) {
             throw new IllegalArgumentException("Day must be Monday to Friday: " + day);

@@ -1,0 +1,35 @@
+[INFO]   from pom.xml
+[INFO] Running edu.svv.registration.CourseTest
+[INFO] Running edu.svv.registration.CourseTest$Overlap
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.216 s -- in edu.svv.registration.CourseTest$Overlap
+[INFO] Running edu.svv.registration.CourseTest$Validation
+[INFO] Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.128 s -- in edu.svv.registration.CourseTest$Validation
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.368 s -- in edu.svv.registration.CourseTest
+[INFO] Running edu.svv.registration.CreditPolicyTest
+[ERROR] Tests run: 21, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.050 s <<< FAILURE! -- in edu.svv.registration.CreditPolicyTest
+[INFO] Running edu.svv.registration.RegistrationServiceTest
+[INFO] Running edu.svv.registration.RegistrationServiceTest$Drop
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in edu.svv.registration.RegistrationServiceTest$Drop
+[INFO] Running edu.svv.registration.RegistrationServiceTest$Negative
+[INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s -- in edu.svv.registration.RegistrationServiceTest$Negative
+[INFO] Running edu.svv.registration.RegistrationServiceTest$TimeConflict
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in edu.svv.registration.RegistrationServiceTest$TimeConflict
+[INFO] Running edu.svv.registration.RegistrationServiceTest$Capacity
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in edu.svv.registration.RegistrationServiceTest$Capacity
+[INFO] Running edu.svv.registration.RegistrationServiceTest$EctsLimit
+[ERROR] Tests run: 13, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.023 s <<< FAILURE! -- in edu.svv.registration.RegistrationServiceTest$EctsLimit
+[INFO] Running edu.svv.registration.RegistrationServiceTest$Priority
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s -- in edu.svv.registration.RegistrationServiceTest$Priority
+[INFO] Running edu.svv.registration.RegistrationServiceTest$DecisionTable
+[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 s -- in edu.svv.registration.RegistrationServiceTest$DecisionTable
+[INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.100 s -- in edu.svv.registration.RegistrationServiceTest
+[INFO] Running edu.svv.registration.StudentTest
+[INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s -- in edu.svv.registration.StudentTest
+[INFO] Results:
+[ERROR] Failures: 
+[ERROR]   CreditPolicyTest.boundaryValues:36 expected: <45> but was: <50>
+[ERROR]   CreditPolicyTest.boundaryValues:36 expected: <45> but was: <50>
+[ERROR]   CreditPolicyTest.equivalenceClasses:24 expected: <45> but was: <50>
+[ERROR]   RegistrationServiceTest$EctsLimit.ectsBoundaries:197 Multiple Failures (2 failures)
+[ERROR] Tests run: 147, Failures: 4, Errors: 0, Skipped: 0
+[INFO] BUILD FAILURE
